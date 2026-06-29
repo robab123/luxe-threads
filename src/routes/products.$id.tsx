@@ -79,7 +79,7 @@ function ProductPage() {
           <div className="mt-10">
             <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Color · {color}</p>
             <div className="mt-3 flex flex-wrap gap-2">
-              {product.colors.map((c) => (
+              {product.colors.map((c: string) => (
                 <button key={c} onClick={() => setColor(c)} className={cn("rounded-full border px-4 py-2 text-xs tracking-wide transition-colors", color === c ? "border-foreground bg-foreground text-background" : "border-border hover:border-foreground/60")}>
                   {c}
                 </button>
@@ -93,7 +93,7 @@ function ProductPage() {
               <button className="underline-offset-4 hover:underline">Size guide</button>
             </div>
             <div className="mt-3 grid grid-cols-5 gap-2">
-              {product.sizes.map((s) => (
+              {product.sizes.map((s: string) => (
                 <button key={s} onClick={() => setSize(s)} className={cn("rounded-sm border py-3 text-sm transition-colors", size === s ? "border-foreground bg-foreground text-background" : "border-border hover:border-foreground/60")}>
                   {s}
                 </button>
